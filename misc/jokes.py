@@ -8,7 +8,7 @@ from config import need_to_send_jokes, seconds_btw_telling_jokes, chat_ids
 
 async def get_random_joke() -> str:
     anectots_on_one_page_count = 10
-    joke_number = random.randint(0, 5_000)
+    joke_number = random.randint(0, 2_000)
     page_number = joke_number // anectots_on_one_page_count
 
     main_url = 'https://веселун.рф/anekdoty/good/'
