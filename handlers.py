@@ -14,7 +14,7 @@ async def reply_joke(msg: types.Message):
 
 async def reply_women_joke(msg: types.Message):
     joke = await get_joke_about_women()
-    await msg.answer(joke)
+    await msg.answer(joke, parse_mode='html')
 
 
 async def answer_to_yes_word(msg: types.Message):
@@ -25,6 +25,6 @@ async def answer_to_yes_word(msg: types.Message):
 def register_handlers(dp: Dispatcher):
     dp.register_message_handler(answer_start, commands=['start'])
     dp.register_message_handler(reply_joke, commands=['joke'])
-    dp.register_message_handler(reply_women_joke, commands=['wjoke'])
+    dp.register_message_handler(reply_women_joke, commands=['womjoke'])
     dp.register_message_handler(answer_to_yes_word, content_types=['text'])
 
