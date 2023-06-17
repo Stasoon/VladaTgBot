@@ -32,7 +32,7 @@ async def get_joke_about_women():
     soup = BeautifulSoup(res.text, "html.parser")
     data = soup.findAll('div', attrs={'class': 'tecst'})
 
-    return data[joke_number % 20]
+    return data[joke_number % 20].text
 
 
 async def send_jokes_by_interval():
